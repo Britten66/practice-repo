@@ -41,20 +41,34 @@ public class arraypractice1 {
 
     public static void main(String[] args) {
 
-    Scanner input = new Scanner(System.in)
+    Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter Temp's here ");
-         int days = input.nextint();
+        System.out.println("Pick Temp's here [ 1 , 2 , 3, 4, 5 ] ");
+         int days = input.nextInt();
+
+         // temps as double
 
          double[] temps = new double[days];
 
 
                  for(int i = 0; i < days; i++){
-                     System.out.println("Enter Temp for day 1" + (i + 1) + " ");
-                     temps[i] = input.nextDouble;
+                     System.out.println("Enter Temp for day " + (i + 1) + ": ");
+                     //adding this here to step down and wait for user instead of asking all days at once
+                     System.out.flush();
+                     temps[i] = input.nextDouble();
                  }
 
+
+                 double sum = 0;
+                 for (int i = 0; i < days; i++)
+                 {
+                     sum += temps[i];
+                 }
+
+        // avg here
+
             double average = sum/days;
+
 
                  int totalCount = 0;
                  for(int i = 0; i < days; i++) {
@@ -66,12 +80,12 @@ public class arraypractice1 {
                      // this will be where the program will print everything out
 
 
-                     System.out.println("AVG TEMP: " + average);
-                     System.out.println("DAYS ABOVE AVG TEMP: " + totalCount);
+                     System.out.printf("AVG TEMP: %.2f%n", average);
+                     System.out.printf("DAYS ABOVE AVG TEMP: %d%n",  totalCount);
 
 
                     //closing scanner as a good habit
-                    input.close;
+                    input.close();
 
 
     }
