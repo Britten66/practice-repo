@@ -36,7 +36,7 @@
 
 import java.util.Scanner;
 
-public class arraypractice1 {
+public class ArrayPractice1 {
 
 
     public static void main(String[] args) {
