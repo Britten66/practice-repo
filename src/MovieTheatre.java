@@ -37,30 +37,35 @@
  *
  *
  *
+ *
+ *
 
 **/
 
 
+import java.util.Scanner;
 
 public class MovieTheatre {
 
     public static void main(String[] args) {
-
+        Scanner input = new Scanner(System.in);
 
         char[][] seats = new char[5][6];
 
 
         for (int row = 0; row < 5; row++) {
+
             for (int column = 0; column < 6; column++) {
                 seats[row][column] = 'A';
+
             }
 
         }
-
         // here is the menu portion
 
         boolean running = true;
         while (running) {
+
             System.out.println("1. Display chart");
             System.out.println("2. Reserve a seat");
             System.out.println("3. Cancel a seat");
@@ -68,22 +73,27 @@ public class MovieTheatre {
             System.out.print("Choose: ");
             int choice = input.nextInt();
 
-
-
-        }
-
-        // menu is done this is for printing out
-
-        public static void displayChart(char[][] seats) {
-            for (int row = 0; row < seats.length; row++) {
-                for (int col = 0; col < seats[row].length; col++) {
-                    System.out.print(seats[row][col] + " ");
-                }
-                System.out.println();
+            if (choice == 1) {
+                displayChart(seats);
+            } else if (choice == 4) {
+                running = false;
             }
+
         }
     }
 
-    }
+    // menu is done this is for printing out
 
+    public static void displayChart(char[][] seats) {
+        for (int row = 0; row < seats.length; row++) {
+            for (int col = 0; col < seats[row].length; col++) {
+                System.out.print(seats[row][col] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
+
+
+
+
