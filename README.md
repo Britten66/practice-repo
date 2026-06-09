@@ -1,8 +1,9 @@
 # Hand In Repo
+A repo for me to practice as a full stack developer also using this respoitory to hand in projects as they are given out.
 
-A repo for me to hone my skills as a full stack developer also using this respoitory to hand in projects as they are given out. 
-
-# Array Basics
+# undoRedoManager  (complete)
+This code implements an undo/redo tracking system by using a doubly linked list to store a sequence of saved actions as connected nodes. The Redo method specifically functions by moving the currentState pointer forward to the next node in that list, effectively reapplying an action that was just previously undid.
+# Array Basic (complete)
 First project added aims to ask the user for an input of how many days they would like in the array
 
 the program creates an array of this size and request a value per day 
