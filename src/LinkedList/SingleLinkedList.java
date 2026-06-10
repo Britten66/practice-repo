@@ -66,32 +66,49 @@ public class SingleLinkedList {
 
 
     public boolean searchLinkedList(int value) {
-        if (head == null) return false;
-
+        if (head == null) {
+            return false;
+        }
         Node tempNode = head;
-        while (tempNode != null) {
-            if (tempNode.value = value)
+        for (int i = 0; i < size; i++) {
+            if (tempNode.value == value) {
                 return true;
-
-        tempNode = tempNode.next;
-    }
+            }
+            tempNode = tempNode.next;
+        }
         return false;
+    }
 
+
+    public void deleteLinkedList(int location) {
+        if (head == null) {
+            return;
+        }
+        if (location == 0) {
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            }
+        } else if (location >= size - 1) {
+            Node tempNode = head;
+            for (int i = 0; i < size - 2; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = null;
+            tail = tempNode;
+        } else {
+            Node tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next;
+        }
+        size--;
     }
 
 
 
-    //Search for an element in a linked list
-    //Delete method
 
-    //EXERCISE 1: given a value, search for that element and return a boolean if the element exist or not.
-
-
-
-
-
-
-    //EXERCISE 2: Given a location Implement a Delete method.
 
 
 }
